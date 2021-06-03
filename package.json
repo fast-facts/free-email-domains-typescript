@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "update": "ts-node src/update.ts",
-    "build": "copyfiles package.json README.md LICENSE dist"
+    "build": "copyfiles README.md LICENSE dist"
   },
   "author": "",
   "license": "MIT",
