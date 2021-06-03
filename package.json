@@ -2,10 +2,11 @@
   "name": "free-email-domains-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "update": "ts-node src/update.ts",
-    "build": "copyfiles README.md LICENSE dist"
+    "build": "tsc",
+    "postbuild": "copyfiles README.md LICENSE dist"
   },
   "author": "",
   "license": "MIT",
