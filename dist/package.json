@@ -1,8 +1,8 @@
 {
   "name": "free-email-domains-typescript",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A list of free email domains",
-  "main": "domains.json",
+  "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
