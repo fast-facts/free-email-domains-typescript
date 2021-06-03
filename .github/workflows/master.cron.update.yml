@@ -18,5 +18,12 @@ jobs:
       - run: npm install
       - run: npm run update
 
+      - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: git config --local user.name "github-actions[bot]"
       - run: git commit -a -m "Updated domains.json files"
-      - run: git push origin master
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: ${{ github.ref }}
