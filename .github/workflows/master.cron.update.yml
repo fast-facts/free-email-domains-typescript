@@ -1,4 +1,4 @@
-name: Update database.json files
+name: Update domains.json files
 
 on:
   schedule:
@@ -17,3 +17,6 @@ jobs:
           node-version: 14
       - run: npm install
       - run: npm run update
+
+      - run: git commit -a -m "Updated domains.json files"
+      - run: git push origin master

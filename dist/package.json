@@ -1,11 +1,19 @@
 {
   "name": "free-email-domains-typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "A list of free email domains",
   "main": "domains.json",
   "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItzRabbs/free-email-domains-typescript.git"
+  },
   "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ItzRabbs/free-email-domains-typescript/issues"
+  },
+  "homepage": "https://github.com/ItzRabbs/free-email-domains-typescript#readme",
   "typings": "./index.d.ts",
   "dependencies": {},
   "devDependencies": {}
