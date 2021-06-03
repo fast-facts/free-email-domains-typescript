@@ -1,6 +1,6 @@
 # free-email-domains-typescript
 
-A list of email free email domains provided by [`hubspot`](https://knowledge.hubspot.com/forms/what-domains-are-blocked-when-using-the-forms-email-domains-to-block-feature)
+A list of free email domains provided by [`hubspot`](https://knowledge.hubspot.com/forms/what-domains-are-blocked-when-using-the-forms-email-domains-to-block-feature)
 
 ## Installation
 
