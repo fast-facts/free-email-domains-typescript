@@ -10,7 +10,7 @@ const fileLocation = 'src/index.ts';
 // https://knowledge.hubspot.com/forms/what-domains-are-blocked-when-using-the-forms-email-domains-to-block-feature
 axios.get('https://f.hubspotusercontent40.net/hubfs/2832391/Marketing/Lead-Capture/free-domains-1.csv')
   .then(response => {
-    const data = 'export const domains = ' + JSON.stringify(response.data.split(/,\n/g));
+    const data = 'export const freeEmailDomains = ' + JSON.stringify(response.data.split(/,\n/g));
 
     if (data.length < 100) {
       throw new Error('Domain count too low');
