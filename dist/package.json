@@ -1,0 +1,12 @@
+{
+  "name": "free-email-domains-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "domains.json",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "typings": "./index.d.ts",
+  "dependencies": {},
+  "devDependencies": {}
+}
