@@ -11,6 +11,6 @@ npm install --save free-email-domains-typescript
 ## Quickstart
 
 ```js
-import freeEmailDomains from 'free-email-domains-typescript'
-freeEmailDomains.includes('yahoo.com')
+import { freeEmailDomains } from 'free-email-domains-typescript';
+freeEmailDomains.includes('yahoo.com');
 ```
