@@ -1,4 +1,4 @@
-name: Update domains.json files
+name: Update domains
 
 on:
   schedule:
