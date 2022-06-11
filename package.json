@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.27.2",
     "node-run-cmd": "^1.0.1",
     "object-hash": "^2.2.0",
     "puppeteer": "^14.3.0",
