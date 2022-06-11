@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "node-run-cmd": "^1.0.1",
-    "object-hash": "^2.2.0",
+    "object-hash": "^3.0.0",
     "puppeteer": "^14.3.0",
     "puppeteer-pro": "^1.5.9"
   },
