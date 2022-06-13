@@ -31,11 +31,11 @@ const _launch = _puppeteer.launch;
       '--disable-backgrounding-occluded-windows',
       '--disable-renderer-backgrounding',
       '--disable-device-discovery-notifications',
-      '--disable-extensions-http-throttling'
+      '--disable-extensions-http-throttling',
     ];
   } else {
     options.args = [
-      '--mute-audio'
+      '--mute-audio',
     ];
   }
 
@@ -76,7 +76,7 @@ export function detectNewPage(browser: Puppeteer.Browser, timeout = 30 * 1000) {
           return resolve(newPage);
         }
       } catch (ex: any) {
-        try { await newPage?.close(); } catch (ex: any) { }
+        try { await newPage?.close(); } catch (ex: any) { null; }
 
         clearTimeout(rejectTimeout);
         reject(ex);

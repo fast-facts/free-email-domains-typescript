@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install
+
       - run: npm run update
 
       - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
