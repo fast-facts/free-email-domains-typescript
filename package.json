@@ -16,7 +16,7 @@
     "node-run-cmd": "^1.0.1",
     "object-hash": "^3.0.0",
     "puppeteer": "^14.4.0",
-    "puppeteer-pro": "^1.5.10"
+    "puppeteer-pro": "^1.5.11"
   },
   "devDependencies": {
     "@types/node": "^17.0.42",
