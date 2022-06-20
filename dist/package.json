@@ -6,14 +6,14 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RabbitPlayground/free-email-domains-typescript.git"
+    "url": "git+https://github.com/fast-facts/free-email-domains-typescript.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RabbitPlayground/free-email-domains-typescript/issues"
+    "url": "https://github.com/fast-facts/free-email-domains-typescript/issues"
   },
-  "homepage": "https://github.com/RabbitPlayground/free-email-domains-typescript#readme",
+  "homepage": "https://github.com/fast-facts/free-email-domains-typescript#readme",
   "dependencies": {},
   "devDependencies": {}
 }
