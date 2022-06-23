@@ -1,10 +1,9 @@
 import axios from 'axios';
+import * as execa from 'execa';
 import * as fs from 'fs';
-import { puppeteer } from './chrome';
 import * as hash from 'object-hash';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const cmd = require('node-run-cmd');
+import { puppeteer } from './chrome';
 
 const fileLocation = 'src/index.ts';
 
@@ -28,6 +27,6 @@ void (async () => {
 
   if (curHash !== newHash) {
     fs.writeFileSync(fileLocation, data);
-    cmd.run('cd dist && npm version --no-git-tag-version patch', { shell: true });
+    await execa('cd dist && npm version --no-git-tag-version patch', { shell: true });
   }
 })();
