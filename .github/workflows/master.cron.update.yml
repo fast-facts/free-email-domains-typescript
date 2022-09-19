@@ -22,7 +22,7 @@ jobs:
 
       - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: git config --local user.name "github-actions[bot]"
-      - run: 'git diff-index --quiet HEAD || git commit -a -m "feat: Updated domains.json files"'
+      - run: 'git commit -a -m "feat: Updated domains.json files" || echo "No changes to commit"'
 
       - name: Push changes
         uses: ad-m/github-push-action@master
