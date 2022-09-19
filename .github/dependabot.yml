@@ -1,15 +1,15 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: '/'
     schedule:
-      interval: "daily"
-      time: "03:00"
-      timezone: "America/New_York"
+      interval: 'daily'
+      time: '03:00'
+      timezone: 'America/New_York'
     open-pull-requests-limit: 10
     versioning-strategy: increase
     labels:
       - dependencies
     ignore:
-      - dependency-name: "execa"
-        versions: [">5"]
+      - dependency-name: 'execa'
+        versions: ['>5']
