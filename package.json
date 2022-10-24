@@ -19,7 +19,7 @@
     "puppeteer-pro": "^1.6.9"
   },
   "devDependencies": {
-    "@types/node": "^18.11.3",
+    "@types/node": "^18.11.4",
     "@types/object-hash": "^2.2.1",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
