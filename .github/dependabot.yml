@@ -11,5 +11,6 @@ updates:
     labels:
       - dependencies
     ignore:
+      - dependency-name: 'axios'
       - dependency-name: 'execa'
         versions: ['>5']
