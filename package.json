@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.17",
-    "@types/object-hash": "^3.0.1",
+    "@types/object-hash": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "copyfiles": "^2.4.1",
