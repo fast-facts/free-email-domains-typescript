@@ -16,7 +16,7 @@
     "execa": "^5.1.1",
     "object-hash": "^3.0.0",
     "puppeteer": "^19.7.3",
-    "puppeteer-pro": "^1.6.11"
+    "puppeteer-pro": "^1.7.0"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
