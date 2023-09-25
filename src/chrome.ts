@@ -59,8 +59,14 @@ export function detectNewPage(browser: Puppeteer.Browser, timeout = 30 * 1000) {
 
       try {
         if (target.type() === 'page') {
-          newPage = await target.page();
-          await newPage.bringToFront();
+          const targetPage = await target.page();
+
+          if (!targetPage) {
+            return reject('Target page is null');
+          }
+
+          newPage = targetPage;
+
           const newPagePromise = new Promise<Puppeteer.Page>(resolve2 => newPage.once('domcontentloaded', () => resolve2(newPage)));
           const isPageLoaded = await newPage.evaluate(() => document.readyState);
 
