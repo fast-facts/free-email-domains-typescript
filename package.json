@@ -15,7 +15,7 @@
     "axios": "^1.4.0",
     "execa": "^5.1.1",
     "object-hash": "^3.0.0",
-    "puppeteer": "^21.10.0",
+    "puppeteer": "^21.11.0",
     "puppeteer-pro": "^1.8.9"
   },
   "devDependencies": {
