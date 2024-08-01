@@ -82,7 +82,8 @@ export function detectNewPage(browser: Puppeteer.Browser, timeout = 30 * 1000) {
           return resolve(newPage);
         }
       } catch (ex: any) {
-        try { await newPage?.close(); } catch (ex: any) { null; }
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        try { await newPage?.close(); } catch (_ex) { null; }
 
         clearTimeout(rejectTimeout);
         reject(ex);

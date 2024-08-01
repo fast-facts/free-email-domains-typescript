@@ -50,8 +50,9 @@
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "varsIgnorePattern": "^_",
-        "destructuredArrayIgnorePattern": "^_"
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
       }
     ],
     "deprecation/deprecation": "error"
