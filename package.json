@@ -21,8 +21,8 @@
   "devDependencies": {
     "@types/node": "^22.5.0",
     "@types/object-hash": "^3.0.6",
-    "@typescript-eslint/eslint-plugin": "^8.2.0",
-    "@typescript-eslint/parser": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
     "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
     "eslint-plugin-deprecation": "^3.0.0",
