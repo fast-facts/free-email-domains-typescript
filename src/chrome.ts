@@ -1,5 +1,5 @@
-import * as  Puppeteer from 'puppeteer';
-import * as  _puppeteer from 'puppeteer-pro';
+import * as Puppeteer from 'puppeteer';
+import * as _puppeteer from 'puppeteer-pro';
 
 _puppeteer.avoidDetection();
 if (!process.env.VSCODE_INSPECTOR_OPTIONS) {
