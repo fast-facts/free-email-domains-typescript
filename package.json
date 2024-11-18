@@ -22,8 +22,8 @@
     "@types/node": "^22.9.0",
     "@types/object-hash": "^3.0.6",
     "copyfiles": "^2.4.1",
-    "eslint": "^9.14.0",
-    "eslint-config-final": "^1.4.11",
+    "eslint": "^9.15.0",
+    "eslint-config-final": "^1.4.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.14.0"
