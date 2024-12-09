@@ -6,7 +6,7 @@ if (!process.env.VSCODE_INSPECTOR_OPTIONS) {
   _puppeteer.blockResources('stylesheet', 'image', 'media', 'font');
 }
 const _launch = _puppeteer.launch;
-(_puppeteer as any).launch = async function (options?: Puppeteer.LaunchOptions & Puppeteer.LaunchOptions & Puppeteer.ConnectOptions) {
+(_puppeteer as any).launch = async function (options?: Puppeteer.LaunchOptions & Puppeteer.ConnectOptions) {
   if (!options) options = {};
 
   if (options.headless === undefined) {
