@@ -19,7 +19,7 @@
     "puppeteer-pro": "^1.9.5"
   },
   "devDependencies": {
-    "@types/node": "^22.13.5",
+    "@types/node": "^22.13.8",
     "@types/object-hash": "^3.0.6",
     "copyfiles": "^2.4.1",
     "eslint-config-final": "^1.5.6",
