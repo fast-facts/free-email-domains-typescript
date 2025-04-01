@@ -22,7 +22,7 @@
     "@types/node": "^22.13.14",
     "@types/object-hash": "^3.0.6",
     "copyfiles": "^2.4.1",
-    "eslint-config-final": "^1.5.11",
+    "eslint-config-final": "^1.5.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
