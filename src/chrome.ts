@@ -1,12 +1,8 @@
 import * as Puppeteer from 'puppeteer';
-import * as _puppeteer from 'puppeteer-pro';
+import * as PuppeteerPro from 'puppeteer-pro';
 
-_puppeteer.avoidDetection();
-if (!process.env.VSCODE_INSPECTOR_OPTIONS) {
-  _puppeteer.blockResources('stylesheet', 'image', 'media', 'font');
-}
-const _launch = _puppeteer.launch;
-(_puppeteer as any).launch = async function (options?: Puppeteer.LaunchOptions & Puppeteer.ConnectOptions) {
+const _launch = PuppeteerPro.launch;
+(PuppeteerPro as any).launch = async function (options?: Puppeteer.LaunchOptions & Puppeteer.ConnectOptions) {
   if (!options) options = {};
 
   if (options.headless === undefined) {
@@ -14,7 +10,6 @@ const _launch = _puppeteer.launch;
   }
 
   options.pipe = true;
-  options.defaultViewport = null;
 
   if (!process.env.VSCODE_INSPECTOR_OPTIONS) {
     options.args = [
@@ -33,18 +28,40 @@ const _launch = _puppeteer.launch;
       '--disable-device-discovery-notifications',
       '--disable-extensions-http-throttling',
     ];
-  } else {
-    options.args = [
-      '--mute-audio',
-    ];
   }
 
-  const o: Puppeteer.Browser = await _launch.call(this, options);
+  const browser = await _launch.call(this, options) as PuppeteerPro.Browser;
 
-  return o;
+  await browser.avoidDetection();
+  if (!process.env.VSCODE_INSPECTOR_OPTIONS) {
+    await browser.blockResources('stylesheet', 'image', 'media', 'font');
+  }
+
+  const _newPage = browser.newPage;
+  (browser as any).newPage = async function () {
+    const page = await _newPage.call(this, options) as Puppeteer.Page;
+    await page.setViewport({ width: 1800, height: 1200 });
+    return page;
+  };
+
+  const _createBrowserContext = browser.createBrowserContext;
+  (browser as any).createBrowserContext = async function () {
+    const context = await _createBrowserContext.call(this, options) as Puppeteer.BrowserContext;
+
+    const _contextNewPage = context.newPage;
+    (context as any).newPage = async function () {
+      const page = await _contextNewPage.call(this, options) as Puppeteer.Page;
+      await page.setViewport({ width: 1800, height: 1200 });
+      return page;
+    };
+
+    return context;
+  };
+
+  return browser;
 };
 
-export const puppeteer = _puppeteer;
+export const puppeteer = PuppeteerPro;
 
 export function detectNewPage(browser: Puppeteer.Browser, timeout = 30 * 1000) {
   return new Promise<Puppeteer.Page>((resolve, reject) => {
@@ -71,18 +88,14 @@ export function detectNewPage(browser: Puppeteer.Browser, timeout = 30 * 1000) {
           const isPageLoaded = await newPage.evaluate(() => document.readyState);
 
           if (!isPageLoaded.match('complete|interactive')) {
-            console.log(`Waiting for DOM content to load on new page`);
             newPage = await newPagePromise;
           }
-
-          const htmlLength = await newPage.evaluate(() => document.body.outerHTML.length);
-          console.log(`Found page with ${htmlLength} html length`);
 
           clearTimeout(rejectTimeout);
           return resolve(newPage);
         }
       } catch (ex: any) {
-        try { await newPage?.close(); } catch (_ex) { null; }
+        try { await newPage?.close(); } catch (_ex: any) { null; }
 
         clearTimeout(rejectTimeout);
         reject(ex);
