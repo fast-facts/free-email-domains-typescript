@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as execa from 'execa';
 import * as fs from 'fs';
 import * as hash from 'object-hash';
@@ -17,8 +16,15 @@ void (async () => {
 
   await browser.close();
 
-  const csvResponse = await axios.get<string>(link);
-  const data = 'export const freeEmailDomains = ' + JSON.stringify(csvResponse.data.split(/[,\n\r]+/g).filter(x => x.length > 0)) + ';';
+  const response = await fetch(link);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch CSV: ${response.status}`);
+  }
+
+  const text = await response.text();
+
+  const data = 'export const freeEmailDomains = ' + JSON.stringify(text.split(/[,\n\r]+/g).filter(x => x.length > 0)) + ';';
 
   if (data.length < 100) throw new Error('Domain count too low');
 
