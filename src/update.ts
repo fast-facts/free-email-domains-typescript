@@ -1,6 +1,6 @@
-import * as execa from 'execa';
+import execa from 'execa';
 import * as fs from 'fs';
-import * as hash from 'object-hash';
+import hash from 'object-hash';
 
 import { puppeteer } from './chrome';
 
