@@ -11,6 +11,7 @@
     "declaration": true,
     "declarationMap": true,
     "downlevelIteration": true,
+    "esModuleInterop": true,
     "importHelpers": true,
     "inlineSources": true,
     "noEmitHelpers": true,
