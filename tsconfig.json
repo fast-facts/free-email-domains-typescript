@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
     "outDir": "dist",
+    "rootDir": "./src",
     "lib": [
       "ES2018",
       "dom"
     ],
     "module": "commonjs",
     "target": "ES2018",
-    "alwaysStrict": false,
     "declaration": true,
     "declarationMap": true,
-    "downlevelIteration": true,
     "esModuleInterop": true,
     "importHelpers": true,
     "inlineSources": true,
