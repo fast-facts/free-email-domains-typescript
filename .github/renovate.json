@@ -1,0 +1,65 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base"
+    ],
+    "minimumReleaseAge": "14 days",
+    "schedule": [
+        "before 4am"
+    ],
+    "timezone": "America/New_York",
+    "prCreation": "immediate",
+    "labels": [
+        "dependencies"
+    ],
+    "rangeStrategy": "bump",
+    "automerge": true,
+    "automergeType": "pr",
+    "packageRules": [
+        {
+            "matchManagers": [
+                "github-actions"
+            ],
+            "matchDepTypes": [
+                "uses-with"
+            ],
+            "matchDepNames": [
+                "node"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "enabled": false
+        },
+        {
+            "matchDepTypes": [
+                "engines"
+            ],
+            "matchPackageNames": [
+                "node"
+            ],
+            "enabled": false
+        },
+        {
+            "matchPackageNames": [
+                "execa"
+            ],
+            "matchCurrentVersion": ">5",
+            "enabled": false
+        },
+        {
+            "matchPackagePatterns": [
+                "^typescript",
+                "^eslint"
+            ],
+            "groupName": "typescript and eslint"
+        },
+        {
+            "matchPackagePatterns": [
+                "^@types/"
+            ],
+            "groupName": "types"
+        }
+    ]
+}
