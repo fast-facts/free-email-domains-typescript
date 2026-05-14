@@ -42,13 +42,6 @@
             "enabled": false
         },
         {
-            "matchPackageNames": [
-                "execa"
-            ],
-            "matchCurrentVersion": ">5",
-            "enabled": false
-        },
-        {
             "matchPackagePatterns": [
                 "^typescript",
                 "^eslint"
@@ -60,6 +53,12 @@
                 "^@types/"
             ],
             "groupName": "types"
+        },
+        {
+            "matchPackageNames": [
+                "execa"
+            ],
+            "enabled": false
         }
     ]
 }
