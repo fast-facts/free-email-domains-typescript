@@ -27,7 +27,7 @@ jobs:
       - run: npm run build
       # - run: npm test
 
-      - uses: JS-DevTools/npm-publish@v3
+      - uses: JS-DevTools/npm-publish@v4
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           package: ./dist/package.json
