@@ -12,7 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "execa": "^5.1.1",
+    "execa": "^9.6.1",
     "object-hash": "^3.0.0",
     "puppeteer": "^24.43.0",
     "puppeteer-pro": "^2.5.2"
