@@ -2,7 +2,7 @@ import execa from 'execa';
 import * as fs from 'fs';
 import hash from 'object-hash';
 
-import { puppeteer } from './chrome';
+import * as puppeteer from './chrome';
 
 const fileLocation = 'src/index.ts';
 

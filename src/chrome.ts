@@ -1,8 +1,7 @@
 import * as Puppeteer from 'puppeteer';
 import * as PuppeteerPro from 'puppeteer-pro';
 
-const _launch = PuppeteerPro.launch;
-(PuppeteerPro as any).launch = async function (options?: Puppeteer.LaunchOptions & Puppeteer.ConnectOptions) {
+export async function launch(options?: Parameters<typeof PuppeteerPro.launch>[0]) {
   if (!options) options = {};
 
   if (options.headless === undefined) {
@@ -30,7 +29,7 @@ const _launch = PuppeteerPro.launch;
     ];
   }
 
-  const browser = await _launch.call(this, options) as PuppeteerPro.Browser;
+  const browser = await PuppeteerPro.launch(options);
 
   await browser.avoidDetection();
   if (!process.env.VSCODE_INSPECTOR_OPTIONS) {
@@ -38,19 +37,19 @@ const _launch = PuppeteerPro.launch;
   }
 
   const _newPage = browser.newPage;
-  (browser as any).newPage = async function () {
-    const page = await _newPage.call(this, options) as Puppeteer.Page;
+  browser.newPage = async function () {
+    const page = await _newPage.call(this);
     await page.setViewport({ width: 1800, height: 1200 });
     return page;
   };
 
   const _createBrowserContext = browser.createBrowserContext;
-  (browser as any).createBrowserContext = async function () {
-    const context = await _createBrowserContext.call(this, options) as Puppeteer.BrowserContext;
+  browser.createBrowserContext = async function () {
+    const context = await _createBrowserContext.call(this, options);
 
     const _contextNewPage = context.newPage;
-    (context as any).newPage = async function () {
-      const page = await _contextNewPage.call(this, options) as Puppeteer.Page;
+    context.newPage = async function () {
+      const page = await _contextNewPage.call(this);
       await page.setViewport({ width: 1800, height: 1200 });
       return page;
     };
@@ -60,8 +59,6 @@ const _launch = PuppeteerPro.launch;
 
   return browser;
 };
-
-export const puppeteer = PuppeteerPro;
 
 export function detectNewPage(browser: Puppeteer.Browser, timeout = 30 * 1000) {
   return new Promise<Puppeteer.Page>((resolve, reject) => {
