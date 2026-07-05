@@ -12,10 +12,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "camoufox-pro": "^1.0.5",
     "execa": "^5.1.1",
     "object-hash": "^3.0.0",
-    "puppeteer": "^25.1.0",
-    "puppeteer-pro": "^2.5.3"
+    "playwright-core": "~1.59.0"
   },
   "devDependencies": {
     "@types/node": "^25.9.3",

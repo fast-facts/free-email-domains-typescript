@@ -2,12 +2,12 @@ import execa from 'execa';
 import * as fs from 'fs';
 import hash from 'object-hash';
 
-import * as chrome from './chrome';
+import { launch } from 'camoufox-pro';
 
 const fileLocation = 'src/index.ts';
 
 void (async () => {
-  const browser = await chrome.launch();
+  const browser = await launch();
   const page = await browser.newPage();
   await page.goto('https://knowledge.hubspot.com/forms/what-domains-are-blocked-when-using-the-forms-email-domains-to-block-feature');
 
