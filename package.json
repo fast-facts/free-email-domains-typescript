@@ -18,7 +18,7 @@
     "playwright-core": "~1.59.0"
   },
   "devDependencies": {
-    "@types/node": "^25.9.4",
+    "@types/node": "^25.9.5",
     "@types/object-hash": "^3.0.6",
     "copyfiles": "^2.4.1",
     "eslint-config-final": "^1.8.1",
