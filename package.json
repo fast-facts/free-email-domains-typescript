@@ -15,7 +15,7 @@
     "camoufox-pro": "^1.0.5",
     "execa": "^5.1.1",
     "object-hash": "^3.0.0",
-    "playwright-core": "~1.59.0"
+    "playwright-core": "~1.61.1"
   },
   "devDependencies": {
     "@types/node": "^25.9.5",
