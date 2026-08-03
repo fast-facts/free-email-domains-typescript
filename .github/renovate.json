@@ -50,13 +50,6 @@
         },
         {
             "matchPackagePatterns": [
-                "camoufox-pro",
-                "playwright-core"
-            ],
-            "groupName": "camoufox and playwright"
-        },
-        {
-            "matchPackagePatterns": [
                 "^@types/"
             ],
             "groupName": "types"
